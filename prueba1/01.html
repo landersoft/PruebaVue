@@ -22,7 +22,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <div id="app">
+    <div id="app" class="container mt-5">
         <h1>{{titulo}}</h1>
         <ul>
             <li v-for="verdura of verduras">{{verdura}}</li>
@@ -40,6 +40,8 @@
                 <button @click="fruta.cantidad++">+</button>
             </li>
         </ul>
+
+        <h4>Total : {{sumarFrutas}}</h4>
 
 
     </div>
