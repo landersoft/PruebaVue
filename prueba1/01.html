@@ -29,13 +29,18 @@
         </ul>
         <p>
         </p>
-        <ul>
-            <li v-for="fruta of frutas">{{fruta.nombre}} - {{fruta.cantidad}}</li>
-        </ul>
+
         <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
         <button @click="agregarFruta">Agregar</button>
-
         </input>
+
+        <ul>
+            <li v-for="fruta of frutas">
+                <input type="number" v-model.number="fruta.cantidad">{{fruta.nombre}}
+                <button @click="fruta.cantidad++">+</button>
+            </li>
+        </ul>
+
 
     </div>
 
