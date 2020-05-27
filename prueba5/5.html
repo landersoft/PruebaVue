@@ -40,6 +40,7 @@
         <hijo></hijo>   
         </div>
         `,
+
             computed: {
                 ...Vuex.mapState(['numero'])
 
@@ -51,10 +52,17 @@
             template://html 
                 `
         <div>
-        <button @click="$store.commit('aumentar')">+</button> 
-        <h1>numero {{ $store.state.numero }}</h1>
+        <button @click="aumentar">+</button>
+        <button @click="disminuir">-</button>
+        <h1>numero {{ numero }}</h1>
         </div>
-        `
+        `,
+            computed: {
+                ...Vuex.mapState(['numero'])
+            },
+            methods: {
+                ...Vuex.mapMutations(['aumentar', 'disminuir'])
+            }
         });
 
         const store = new Vuex.Store({
@@ -64,6 +72,9 @@
             mutations: {
                 aumentar(state) {
                     state.numero++
+                },
+                disminuir(state) {
+                    state.numero--
                 }
             }
 
