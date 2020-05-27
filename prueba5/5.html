@@ -57,8 +57,8 @@
         </p>
         <button @click="obtenerCursos">Obtener Cursos</button>
         <h1>numero {{ numero }}</h1>
-        <ul v-for="item of cursos">
-            <li>
+        <ul >
+            <li v-for="item of cursos">
             {{item.nombre}}
             </li>
         
