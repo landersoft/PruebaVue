@@ -53,7 +53,7 @@
                 `
         <div>
         <button @click="aumentar">+</button>
-        <button @click="disminuir">-</button>
+        <button @click="disminuir(2)">-</button>
         <h1>numero {{ numero }}</h1>
         </div>
         `,
@@ -73,8 +73,8 @@
                 aumentar(state) {
                     state.numero++
                 },
-                disminuir(state) {
-                    state.numero--
+                disminuir(state, n) {
+                    state.numero = state.numero - n
                 }
             }
 
